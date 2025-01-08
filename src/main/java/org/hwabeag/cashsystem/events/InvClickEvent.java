@@ -156,6 +156,7 @@ public class InvClickEvent implements Listener {
                 return;
             }
             if (e.getView().getTitle().equals(PlayerShop + "구매도우미")) {
+                e.setCancelled(true);
                 String clickitem = e.getCurrentItem().getItemMeta().getDisplayName();
                 if (clickitem.equals(ChatColor.translateAlternateColorCodes('&', "&a구매하기"))) {
                     int page = PlayerConfig.getInt(name + ".페이지");

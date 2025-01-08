@@ -1,7 +1,7 @@
 name: CashSystem
 version: '${version}'
 main: org.hwabeag.cashsystem.CashSystem
-api-version: '1.20'
+api-version: '1.13'
 
 commands:
   캐시:

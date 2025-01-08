@@ -31,7 +31,7 @@ public class CashShopItemSettingGUI implements Listener {
         if (CashSystemConfig.getConfigurationSection("캐시상점." + PlayerShop + ".물품." + PlayerPage) != null) {
             for (String key : Objects.requireNonNull(CashSystemConfig.getConfigurationSection("캐시상점." + PlayerShop + ".물품." + PlayerPage)).getKeys(false)) {
                 if (Page == PlayerPage) {
-                    @Nullable ItemStack item = CashSystemConfig.getItemStack("캐시상점." + PlayerShop + ".물품." + PlayerPage + "." + key);
+                    @Nullable ItemStack item = CashSystemConfig.getItemStack("캐시상점." + PlayerShop + ".물품." + PlayerPage + "." + key).clone();
                     inv.setItem(Integer.parseInt(key), item);
                 }
                 N = N + 1;
