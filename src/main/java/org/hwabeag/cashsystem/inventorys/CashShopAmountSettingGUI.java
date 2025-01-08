@@ -21,6 +21,7 @@ public class CashShopAmountSettingGUI implements Listener {
     private final Inventory inv;
 
     FileConfiguration CashSystemConfig = ConfigManager.getConfig("cash-system");
+    FileConfiguration Config = ConfigManager.getConfig("setting");
     FileConfiguration PlayerConfig = ConfigManager.getConfig("player");
 
     private @NotNull ItemStack getCashAmountItemData(Player p, int key) {
@@ -30,9 +31,13 @@ public class CashShopAmountSettingGUI implements Listener {
         @Nullable ItemStack item = Objects.requireNonNull(CashSystemConfig.getItemStack("캐시상점." + shopname + ".물품." + page + "." + key)).clone();
         ItemMeta meta = item.getItemMeta();
         ArrayList<String> loreList = new ArrayList<>();
-        int amount = CashSystemConfig.getInt("캐시상점." + shopname + ".금액." + page + "." + key, 0);
-        loreList.add(ChatColor.translateAlternateColorCodes('&', "&f&l- 현재 구매가: " + amount + " 원"));
-        loreList.add(ChatColor.translateAlternateColorCodes('&', "&f&l- 우클릭시 구매 금액을 수정합니다."));
+        int amount = CashSystemConfig.getInt("캐시상점." + shopname + ".금액." + page + "." + key);
+
+        for (String lore : Config.getStringList("shop-item-lore")) {
+            String basic = lore.replace("%amount%", Integer.toString(amount));
+            loreList.add(ChatColor.translateAlternateColorCodes('&', basic));
+        }
+
         meta.setLore(loreList);
         item.setItemMeta(meta);
         return item;

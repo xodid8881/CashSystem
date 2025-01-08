@@ -20,8 +20,9 @@ import static org.bukkit.Bukkit.getServer;
 
 public class InvClickEvent implements Listener {
     FileConfiguration CashSystemConfig = ConfigManager.getConfig("cash-system");
+    FileConfiguration Config = ConfigManager.getConfig("cash-system");
     FileConfiguration PlayerConfig = ConfigManager.getConfig("player");
-    String Prefix = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(CashSystemConfig.getString("cash-system.prefix")));
+    String Prefix = ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(Config.getString("cash-system.prefix")));
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {

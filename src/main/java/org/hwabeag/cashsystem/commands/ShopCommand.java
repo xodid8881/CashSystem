@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static org.bukkit.Material.AIR;
-
 public class ShopCommand implements TabCompleter, @Nullable CommandExecutor {
 
     FileConfiguration CashSystemConfig = ConfigManager.getConfig("cash-system");
@@ -128,6 +126,22 @@ public class ShopCommand implements TabCompleter, @Nullable CommandExecutor {
                     PlayerConfig.set(name + ".설정상점", args[1]);
                     ConfigManager.saveConfigs();
                     CashShopAmountSettingGUI inv = new CashShopAmountSettingGUI(player);
+                    inv.open(player);
+                } else {
+                    player.sendMessage(Prefix + " " + args[1] + " 이름의 캐시상점이 존재하지 않습니다.");
+                }
+                return true;
+            }
+            if (args[0].equalsIgnoreCase("열기")) {
+                if (args.length == 1) {
+                    player.sendMessage(Prefix + " 제목을 정확하게 적어주세요.");
+                    return true;
+                }
+                if (CashSystemConfig.getString("캐시상점." + args[1]) != null) {
+                    PlayerConfig.set(name + ".페이지", 0);
+                    PlayerConfig.set(name + ".구매상점", args[1]);
+                    ConfigManager.saveConfigs();
+                    CashShopGUI inv = new CashShopGUI(player);
                     inv.open(player);
                 } else {
                     player.sendMessage(Prefix + " " + args[1] + " 이름의 캐시상점이 존재하지 않습니다.");

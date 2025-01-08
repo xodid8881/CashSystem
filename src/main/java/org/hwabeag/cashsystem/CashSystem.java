@@ -45,6 +45,7 @@ public final class CashSystem extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         Bukkit.getLogger().info("[CashSystem] Enable");
+        this.saveDefaultConfig();
         getConfigManager();
         registerCommands();
         registerEvents();

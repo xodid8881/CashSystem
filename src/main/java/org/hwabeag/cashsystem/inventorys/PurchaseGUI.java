@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.hwabeag.cashsystem.config.ConfigManager;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class PurchaseGUI implements Listener {
     private final Inventory inv;

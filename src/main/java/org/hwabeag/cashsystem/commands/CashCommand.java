@@ -141,6 +141,14 @@ public class CashCommand implements TabCompleter, @Nullable CommandExecutor {
                 }
                 return true;
             }
+            if (args[0].equalsIgnoreCase("확인")) {
+                String name = player.getName();
+                if (PlayerConfig.getString(name + ".캐시") != null) {
+                    int cash = PlayerConfig.getInt(name + ".캐시");
+                    player.sendMessage(Prefix + " 당신의 보유 캐시 : " + cash + "원");
+                    return true;
+                }
+            }
             player.sendMessage(Prefix + " /캐시 지급 [닉네임] [정도] - 캐시를 지급합니다.");
             player.sendMessage(Prefix + " /캐시 회수 [닉네임] [정도] - 캐시를 회수합니다.");
             player.sendMessage(Prefix + " /캐시 설정 [닉네임] [정도] - 캐시를 설정합니다.");

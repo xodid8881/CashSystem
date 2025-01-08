@@ -7,14 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.hwabeag.cashsystem.CashSystem;
 import org.hwabeag.cashsystem.config.ConfigManager;
 import org.hwabeag.cashsystem.inventorys.CashShopAmountSettingGUI;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class AmountCommand implements CommandExecutor {
 
@@ -46,13 +43,8 @@ public class AmountCommand implements CommandExecutor {
             PlayerConfig.set(name + ".설정슬롯", 0);
             ConfigManager.saveConfigs();
             player.sendMessage(Prefix + " 해당 구매 금액을 " + args[0] + "원으로 설정했습니다.");
-            getServer().getScheduler().scheduleSyncDelayedTask(CashSystem.getPlugin(), new Runnable() {
-                @Override
-                public void run() {
-                    CashShopAmountSettingGUI inv = new CashShopAmountSettingGUI(player);
-                    inv.open(player);
-                }
-            }, 20 * 2);
+            CashShopAmountSettingGUI inv = new CashShopAmountSettingGUI(player);
+            inv.open(player);
             return true;
         }
         return false;

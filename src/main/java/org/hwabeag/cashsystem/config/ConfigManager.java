@@ -13,6 +13,7 @@ public class ConfigManager {
     public ConfigManager() {
         String path = plugin.getDataFolder().getAbsolutePath();
         configSet.put("cash-system", new ConfigMaker(path, "CashSystem.yml"));
+        configSet.put("setting", new ConfigMaker(path, "config.yml"));
         configSet.put("player", new ConfigMaker(path, "Player.yml"));
         loadSettings();
         saveConfigs();
@@ -38,5 +39,6 @@ public class ConfigManager {
         FileConfiguration StyleSystemConfig = getConfig("cash-system");
         StyleSystemConfig.options().copyDefaults(true);
         StyleSystemConfig.addDefault("cash-system.prefix", "&a&l[CashSystem]&7");
+        saveConfigs();
     }
 }
