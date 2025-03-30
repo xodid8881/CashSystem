@@ -48,6 +48,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 if (clickitem.equals(ChatColor.translateAlternateColorCodes('&', "&a다음 페이지"))) {
                     e.getInventory().clear();
@@ -63,6 +64,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 return;
             }
@@ -83,6 +85,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 if (clickitem.equals(ChatColor.translateAlternateColorCodes('&', "&a다음 페이지"))) {
                     e.getInventory().clear();
@@ -98,6 +101,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 int Slot = e.getSlot();
                 PlayerConfig.set(name + ".금액설정", true);
@@ -125,6 +129,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 if (clickitem.equals(ChatColor.translateAlternateColorCodes('&', "&a다음 페이지"))) {
                     e.getInventory().clear();
@@ -140,6 +145,7 @@ public class InvClickEvent implements Listener {
                             inv.open(player);
                         }
                     }, 20);
+                    return;
                 }
                 int Slot = e.getSlot();
                 PlayerConfig.getString(name + ".구매상점");

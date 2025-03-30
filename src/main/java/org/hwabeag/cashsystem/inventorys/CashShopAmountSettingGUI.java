@@ -32,7 +32,11 @@ public class CashShopAmountSettingGUI implements Listener {
         ItemMeta meta = item.getItemMeta();
         ArrayList<String> loreList = new ArrayList<>();
         int amount = CashSystemConfig.getInt("캐시상점." + shopname + ".금액." + page + "." + key);
-
+        if (item.getLore() != null){
+            for (String lore : item.getLore()) {
+                loreList.add(ChatColor.translateAlternateColorCodes('&', lore));
+            }
+        }
         for (String lore : Config.getStringList("shop-item-lore")) {
             String basic = lore.replace("%amount%", Integer.toString(amount));
             loreList.add(ChatColor.translateAlternateColorCodes('&', basic));

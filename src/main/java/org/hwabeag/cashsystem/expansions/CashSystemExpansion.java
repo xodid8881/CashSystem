@@ -36,7 +36,7 @@ public class CashSystemExpansion extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getIdentifier() {
-        return "cash_system";
+        return "cash";
     }
 
     @Override
@@ -46,12 +46,12 @@ public class CashSystemExpansion extends PlaceholderExpansion {
 
     @Override
     public String onRequest(OfflinePlayer player, @NotNull String params) {
-        if (params.equalsIgnoreCase("getIndex")) { // %cash_system_getIndex%
+        if (params.equalsIgnoreCase("get")) { // %cash_get%
             String name = Objects.requireNonNull(player).getName();
-            if (PlayerConfig.getString(name + ".캐시") != null) {
-                return PlayerConfig.getString(name + ".캐시");
+            if (PlayerConfig.get(name + ".캐시") != null) {
+                return String.valueOf(PlayerConfig.getInt(name + ".캐시"));
             }
-            return "&l&a[&f서버원&l&a]";
+            return "0";
         }
         return null; //
     }
