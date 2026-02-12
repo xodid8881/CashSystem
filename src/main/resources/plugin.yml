@@ -1,15 +1,16 @@
 name: CashSystem
 version: '${version}'
 main: org.hwabeag.cashsystem.CashSystem
-api-version: '1.13'
+api-version: '1.21'
+softdepend: [PlaceholderAPI]
 
 commands:
   캐시:
-    description: 캐시를 이용합니다.
+    description: 캐시 명령어입니다.
     usage: /캐시
   캐시상점:
-    description: 캐시상점을 이용합니다.
+    description: 캐시상점 명령어입니다.
     usage: /캐시상점
   금액:
-    description: 금액을 설정합니다.
+    description: 금액 설정 명령어입니다.
     usage: /금액

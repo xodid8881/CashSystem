@@ -1,3 +1,16 @@
+database:
+  type: sqlite
+  sqlite:
+    file: cashsystem.db
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    database: cashsystem
+    username: root
+    password: change-me
+    use-ssl: false
+  migrate-player-yml: true
+
 shop-item-lore:
   - "&f&l- 현재 구매가 %amount%원"
-  - "&f&l- 우클릭시 구매합니다."
+  - "&f&l- 클릭시 구매됩니다."
