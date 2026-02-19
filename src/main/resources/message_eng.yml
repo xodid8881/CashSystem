@@ -1,0 +1,137 @@
+﻿cash:
+  console_usage_check: "On console, use /캐시 확인 <player>."
+  balance_of: "%player%'s cash balance: %amount%"
+  admin_give_success: "Gave %amount% cash to %player%. (Now: %balance%)"
+  user_give_notice: "You received %amount% cash. (Now: %balance%)"
+  admin_take_failed: "Cannot take cash because %player% does not have enough."
+  admin_take_success: "Took %amount% cash from %player%. (Now: %balance%)"
+  user_take_notice: "%amount% cash was taken. (Now: %balance%)"
+  admin_set_success: "Set %player%'s cash to %amount%."
+  user_set_notice: "Your cash was set to %amount%."
+  help:
+    give: "/캐시 지급 <player> <amount>"
+    take: "/캐시 회수 <player> <amount>"
+    set: "/캐시 설정 <player> <amount>"
+    check: "/캐시 확인 [player]"
+
+shop:
+  enter_shop_name: "Please enter a shop name."
+  not_found: "That shop does not exist."
+  list_empty: "There are no registered shops."
+  usage_create: "/캐시상점 생성 <shop> <line(1~5)>"
+  invalid_line: "Line must be between 1 and 5."
+  already_exists: "That shop name already exists."
+  created: "Created shop: %shop%."
+  usage_delete: "/캐시상점 삭제 <shop>"
+  deleted: "Deleted shop: %shop%."
+  usage_item_setting: "/캐시상점 물품설정 <shop>"
+  usage_amount_setting: "/캐시상점 금액설정 <shop>"
+  help:
+    list: "/캐시상점"
+    open: "/캐시상점 열기 <shop>"
+    create: "/캐시상점 생성 <shop> <line>"
+    delete: "/캐시상점 삭제 <shop>"
+    item_setting: "/캐시상점 물품설정 <shop>"
+    amount_setting: "/캐시상점 금액설정 <shop>"
+
+amount:
+  usage: "/금액 <amount>"
+  select_item_first: "Select an item first in the amount setting view."
+  state_not_found: "Could not find setting state."
+  command_guide: "Set the amount in GUI."
+  updated: "Purchase amount set to %amount%."
+
+purchase:
+  invalid_product: "This item cannot be purchased."
+  not_enough_cash: "You do not have enough cash."
+  current_cash: "Current cash: %amount%"
+  success: "Purchase completed."
+  cancelled: "Purchase cancelled."
+
+common:
+  player_only: "Only players can use this command."
+  no_permission: "You do not have permission."
+  invalid_amount: "Amount must be a number 0 or greater."
+
+gui:
+  title:
+    shop_list: "Shop List"
+    shop: "Cash Shop %shop%"
+    item_setting: "Item Setting %shop%"
+    amount_setting: "Amount Setting %shop%"
+    price_editor: "Price Editor %shop%"
+    purchase_confirm: "Purchase Confirm %shop%"
+    item_setting_suffix: "Item Setting"
+  button:
+    prev_name: "&aPrevious Page"
+    prev_lore:
+      - "&7Go to previous page."
+    next_name: "&aNext Page"
+    next_lore:
+      - "&7Go to next page."
+    buy_name: "&aBuy"
+    buy_lore:
+      - "&7Buy selected item."
+    cancel_name: "&cCancel"
+    cancel_lore:
+      - "&7Cancel and close this window."
+  footer:
+    shop_list_status_name: "&eShop List"
+    shop_list_status_lore:
+      - "&fPage: &a%page%&f/&a%total%"
+      - "&fRegistered shops: &b%shops%"
+      - "&7Click a shop to open it."
+    shop_status_name: "&eShop Status"
+    shop_status_lore:
+      - "&fCurrent page: &a%page%"
+      - "&fCurrent cash: &b%cash%"
+      - "&7Click an item to purchase."
+    item_setting_status_name: "&eItem Setting Guide"
+    item_setting_status_lore:
+      - "&fCurrent page: &a%page%"
+      - "&7Place or update items on top rows."
+    amount_setting_status_name: "&eAmount Setting Guide"
+    amount_setting_status_lore:
+      - "&fCurrent page: &a%page%"
+      - "&7Click item, then set value in price editor GUI."
+  purchase:
+    preview_lore:
+      - ""
+      - "&fPrice: &a%amount%"
+      - "&7Purchase executes immediately."
+  shop_list:
+    shop_name: "&a%shop%"
+    shop_lore:
+      - "&fLines: &a%line%"
+      - "&fItems: &b%items%"
+      - "&7Click to open this shop."
+  shop_item_lore:
+    - ""
+    - "&fCurrent price: &a%amount%"
+    - "&7Click to purchase this item."
+  price_editor:
+    status_name: "&ePrice Editor"
+    status_lore:
+      - "&fShop: &a%shop%"
+      - "&fPage: &a%page%"
+      - "&fSlot: &a%slot%"
+      - "&fCurrent price: &b%amount%"
+    preview_name: "&eSelected Item"
+    preview_lore:
+      - "&fSet price: &a%amount%"
+      - "&7Adjust price with buttons below."
+    minus_1000_name: "&c-1000"
+    minus_100_name: "&c-100"
+    minus_10_name: "&c-10"
+    plus_10_name: "&a+10"
+    plus_100_name: "&a+100"
+    plus_1000_name: "&a+1000"
+    reset_name: "&cReset"
+    reset_lore:
+      - "&7Reset price to zero."
+    back_name: "&eBack"
+    back_lore:
+      - "&7Return to amount setting screen."
+    save_name: "&aSave"
+    save_lore:
+      - "&7Save current price."

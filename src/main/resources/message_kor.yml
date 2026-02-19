@@ -1,0 +1,137 @@
+﻿cash:
+  console_usage_check: "콘솔에서는 /캐시 확인 <플레이어> 형식으로 사용해주세요."
+  balance_of: "%player%님의 보유 캐시: %amount%원"
+  admin_give_success: "%player%님에게 %amount%원을 지급했습니다. (현재: %balance%원)"
+  user_give_notice: "%amount%원이 지급되었습니다. (현재: %balance%원)"
+  admin_take_failed: "%player%님의 캐시가 부족하여 회수할 수 없습니다."
+  admin_take_success: "%player%님에게서 %amount%원을 회수했습니다. (현재: %balance%원)"
+  user_take_notice: "%amount%원이 회수되었습니다. (현재: %balance%원)"
+  admin_set_success: "%player%님의 캐시를 %amount%원으로 설정했습니다."
+  user_set_notice: "캐시가 %amount%원으로 설정되었습니다."
+  help:
+    give: "/캐시 지급 <플레이어> <금액>"
+    take: "/캐시 회수 <플레이어> <금액>"
+    set: "/캐시 설정 <플레이어> <금액>"
+    check: "/캐시 확인 [플레이어]"
+
+shop:
+  enter_shop_name: "상점명을 입력해주세요."
+  not_found: "해당 상점은 존재하지 않습니다."
+  list_empty: "등록된 상점이 없습니다."
+  usage_create: "/캐시상점 생성 <상점명> <라인(1~5)>"
+  invalid_line: "라인은 1~5 범위만 가능합니다."
+  already_exists: "이미 존재하는 상점명입니다."
+  created: "%shop% 상점을 생성했습니다."
+  usage_delete: "/캐시상점 삭제 <상점명>"
+  deleted: "%shop% 상점을 삭제했습니다."
+  usage_item_setting: "/캐시상점 물품설정 <상점명>"
+  usage_amount_setting: "/캐시상점 금액설정 <상점명>"
+  help:
+    list: "/캐시상점"
+    open: "/캐시상점 열기 <상점명>"
+    create: "/캐시상점 생성 <상점명> <라인>"
+    delete: "/캐시상점 삭제 <상점명>"
+    item_setting: "/캐시상점 물품설정 <상점명>"
+    amount_setting: "/캐시상점 금액설정 <상점명>"
+
+amount:
+  usage: "/금액 <금액>"
+  select_item_first: "금액설정 화면에서 아이템을 먼저 선택해주세요."
+  state_not_found: "설정 상태를 찾을 수 없습니다."
+  command_guide: "금액은 GUI에서 설정해주세요."
+  updated: "구매 금액을 %amount%원으로 설정했습니다."
+
+purchase:
+  invalid_product: "해당 물품은 구매할 수 없습니다."
+  not_enough_cash: "캐시가 부족합니다."
+  current_cash: "보유 캐시: %amount%원"
+  success: "구매가 완료되었습니다."
+  cancelled: "구매를 취소했습니다."
+
+common:
+  player_only: "플레이어만 사용할 수 있습니다."
+  no_permission: "권한이 없습니다."
+  invalid_amount: "금액은 0 이상의 숫자여야 합니다."
+
+gui:
+  title:
+    shop_list: "상점 목록"
+    shop: "캐시상점 %shop%"
+    item_setting: "물품설정 %shop%"
+    amount_setting: "금액설정 %shop%"
+    price_editor: "가격 편집 %shop%"
+    purchase_confirm: "구매확인 %shop%"
+    item_setting_suffix: "물품설정"
+  button:
+    prev_name: "&a이전 페이지"
+    prev_lore:
+      - "&7이전 페이지로 이동합니다."
+    next_name: "&a다음 페이지"
+    next_lore:
+      - "&7다음 페이지로 이동합니다."
+    buy_name: "&a구매하기"
+    buy_lore:
+      - "&7선택한 물품을 구매합니다."
+    cancel_name: "&c취소하기"
+    cancel_lore:
+      - "&7구매를 취소하고 닫습니다."
+  footer:
+    shop_list_status_name: "&e상점 목록"
+    shop_list_status_lore:
+      - "&f페이지: &a%page%&f/&a%total%"
+      - "&f등록된 상점 수: &b%shops%"
+      - "&7상점을 클릭하면 바로 열립니다."
+    shop_status_name: "&e상점 정보"
+    shop_status_lore:
+      - "&f현재 페이지: &a%page%"
+      - "&f보유 캐시: &b%cash%원"
+      - "&7원하는 물품을 클릭해 구매하세요."
+    item_setting_status_name: "&e물품 설정 안내"
+    item_setting_status_lore:
+      - "&f현재 페이지: &a%page%"
+      - "&7윗줄에서 물품을 배치하거나 수정하세요."
+    amount_setting_status_name: "&e금액 설정 안내"
+    amount_setting_status_lore:
+      - "&f현재 페이지: &a%page%"
+      - "&7물품 클릭 후 가격 편집 GUI에서 설정하세요."
+  purchase:
+    preview_lore:
+      - ""
+      - "&f구매 가격: &a%amount%원"
+      - "&7구매 버튼으로 즉시 결제됩니다."
+  shop_list:
+    shop_name: "&a%shop%"
+    shop_lore:
+      - "&f라인: &a%line%"
+      - "&f등록 물품: &b%items%개"
+      - "&7클릭하여 상점을 엽니다."
+  shop_item_lore:
+    - ""
+    - "&f현재 구매가: &a%amount%원"
+    - "&7클릭하여 구매할 수 있습니다."
+  price_editor:
+    status_name: "&e가격 편집 정보"
+    status_lore:
+      - "&f상점: &a%shop%"
+      - "&f페이지: &a%page%"
+      - "&f슬롯: &a%slot%"
+      - "&f현재 가격: &b%amount%원"
+    preview_name: "&e선택 물품"
+    preview_lore:
+      - "&f설정 가격: &a%amount%원"
+      - "&7아래 버튼으로 가격을 조정하세요."
+    minus_1000_name: "&c-1000"
+    minus_100_name: "&c-100"
+    minus_10_name: "&c-10"
+    plus_10_name: "&a+10"
+    plus_100_name: "&a+100"
+    plus_1000_name: "&a+1000"
+    reset_name: "&c초기화"
+    reset_lore:
+      - "&7가격을 0원으로 초기화합니다."
+    back_name: "&e뒤로가기"
+    back_lore:
+      - "&7금액설정 화면으로 돌아갑니다."
+    save_name: "&a저장"
+    save_lore:
+      - "&7현재 가격을 저장합니다."
